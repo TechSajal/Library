@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
@@ -54,6 +55,99 @@ class DashboardActivity : AppCompatActivity() {
 
           })
 
+           // history genge sorting
+        val History :AppCompatButton = findViewById(R.id.history)
+        val romantic:AppCompatButton = findViewById(R.id.romantic)
+        val funny:AppCompatButton=findViewById(R.id.funny)
+        val scifi:AppCompatButton = findViewById(R.id.scifi)
+        val politics:AppCompatButton = findViewById(R.id.politics)
+        val food:AppCompatButton = findViewById(R.id.food)
+        val selflove:AppCompatButton = findViewById(R.id.selflove)
+        val myestry:AppCompatButton = findViewById(R.id.mystery)
+        History.setOnClickListener {
+            val filterlist = ArrayList<Book>()
+                 for (item in productlists){
+                     if (item.bookgenre.toLowerCase(Locale.getDefault()).contains("history")){
+                         filterlist.add(item)
+                     }
+                 }
+                 val adapthistory = BookRecyclerView(this@DashboardActivity,filterlist)
+                 recyclerView.adapter = adapthistory
+        }
+
+        romantic.setOnClickListener {
+            val filterlist = ArrayList<Book>()
+            for (item in productlists){
+                if (item.bookgenre.toLowerCase(Locale.getDefault()).contains("romantic")){
+                    filterlist.add(item)
+                }
+            }
+            val adapterromantic = BookRecyclerView(this@DashboardActivity,filterlist)
+            recyclerView.adapter = adapterromantic
+        }
+        funny.setOnClickListener {
+            val filterlist = ArrayList<Book>()
+            for (item in productlists){
+                if (item.bookgenre.toLowerCase(Locale.getDefault()).contains("Funny")){
+                    filterlist.add(item)
+                }
+            }
+            val adapterfunny = BookRecyclerView(this@DashboardActivity,filterlist)
+            recyclerView.adapter = adapterfunny
+        }
+
+        scifi.setOnClickListener {
+            val filterlist = ArrayList<Book>()
+            for (item in productlists){
+                if (item.bookgenre.toLowerCase(Locale.getDefault()).contains("sci-fi")){
+                    filterlist.add(item)
+                }
+            }
+            val adapthistory = BookRecyclerView(this@DashboardActivity,filterlist)
+            recyclerView.adapter = adapthistory
+        }
+
+        politics.setOnClickListener {
+            val filterlist = ArrayList<Book>()
+            for (item in productlists){
+                if (item.bookgenre.toLowerCase(Locale.getDefault()).contains("politics")){
+                    filterlist.add(item)
+                }
+            }
+            val adapthistory = BookRecyclerView(this@DashboardActivity,filterlist)
+            recyclerView.adapter = adapthistory
+        }
+        food.setOnClickListener {
+            val filterlist = ArrayList<Book>()
+            for (item in productlists){
+                if (item.bookgenre.toLowerCase(Locale.getDefault()).contains("food")){
+                    filterlist.add(item)
+                }
+            }
+            val adapthistory = BookRecyclerView(this@DashboardActivity,filterlist)
+            recyclerView.adapter = adapthistory
+        }
+        selflove.setOnClickListener {
+            val filterlist = ArrayList<Book>()
+            for (item in productlists){
+                if (item.bookgenre.toLowerCase(Locale.getDefault()).contains("selflove")){
+                    filterlist.add(item)
+                }
+            }
+            val adapthistory = BookRecyclerView(this@DashboardActivity,filterlist)
+            recyclerView.adapter = adapthistory
+        }
+
+        myestry.setOnClickListener {
+            val filterlist = ArrayList<Book>()
+            for (item in productlists){
+                if (item.bookgenre.toLowerCase(Locale.getDefault()).contains("mystery")){
+                    filterlist.add(item)
+                }
+            }
+            val adapthistory = BookRecyclerView(this@DashboardActivity,filterlist)
+            recyclerView.adapter = adapthistory
+        }
 
 
     }

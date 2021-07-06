@@ -108,12 +108,12 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/gheneback"
                 android:fontFamily="@font/bungee"
-                android:text="History"
+                android:text="history"
                 android:textColor="#FFFFFF"
                 android:textSize="10dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/sci-fi"
+                android:id="@+id/scifi"
                 android:layout_width="74dp"
                 android:layout_height="41dp"
                 android:layout_margin="10dp"
@@ -135,6 +135,7 @@
                 android:textSize="10dp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/food"
                 android:layout_width="74dp"
                 android:layout_height="41dp"
                 android:layout_margin="10dp"
@@ -145,6 +146,7 @@
                 android:textSize="10dp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/selflove"
                 android:layout_width="74dp"
                 android:layout_height="41dp"
                 android:layout_margin="10dp"
@@ -155,6 +157,7 @@
                 android:textSize="10dp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/mystery"
                 android:layout_width="74dp"
                 android:layout_height="41dp"
                 android:layout_margin="10dp"

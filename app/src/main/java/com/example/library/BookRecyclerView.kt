@@ -1,6 +1,7 @@
 package com.example.library
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +23,15 @@ class BookRecyclerView( private val mContext:Context, private val book:ArrayList
         holder.bookname.text = data.bookname
         holder.bookwritter.text = data.booktitle
         Glide.with(mContext).load(data.bookimage).into(holder.bookimage)
-
+          holder.relativelayout.setOnClickListener {
+              val intent = Intent(mContext,BookInformationActivity::class.java)
+               intent.putExtra("bookimage",data.bookimage)
+               intent.putExtra("bookname",data.bookname)
+              intent.putExtra("bookauthor",data.booktitle)
+              intent.putExtra("bookdricption",data.bookdescription)
+              intent.putExtra("bookghene",data.bookgenre)
+              mContext.startActivity(intent)
+          }
     }
 
     override fun getItemCount(): Int {
