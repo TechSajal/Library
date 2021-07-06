@@ -4,6 +4,184 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E3F2FD"
     tools:context=".DashboardActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backbashboard"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="115dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/bungee"
+            android:text="LIBRARY"
+            android:textColor="#000000"
+            android:textSize="24dp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="13dp" />
+
+        <ImageView
+            android:id="@+id/add"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginLeft="180dp"
+            android:src="@drawable/library_add" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/activity_state_wise_search_editText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/edit_text_bg"
+        android:drawableLeft="@drawable/search_icon"
+        android:drawablePadding="10dp"
+        android:hint="Type book name or author"
+        android:inputType="textCapWords"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textColorHint="#c4c4c4"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="RtlSymmetry" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/activity_state_wise_search_editText"
+        app:layout_constraintStart_toStartOf="@+id/activity_state_wise_search_editText"
+        app:layout_constraintTop_toBottomOf="@+id/activity_state_wise_search_editText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/romantic"
+                android:layout_width="74dp"
+                android:layout_height="41dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gheneback"
+                android:fontFamily="@font/bungee"
+                android:text="Romantic"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/funny"
+                android:layout_width="74dp"
+                android:layout_height="41dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gheneback"
+                android:fontFamily="@font/bungee"
+                android:text="Funny"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/history"
+                android:layout_width="74dp"
+                android:layout_height="41dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gheneback"
+                android:fontFamily="@font/bungee"
+                android:text="History"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sci-fi"
+                android:layout_width="74dp"
+                android:layout_height="41dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gheneback"
+                android:fontFamily="@font/bungee"
+                android:text="Sci-fi"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/politics"
+                android:layout_width="74dp"
+                android:layout_height="41dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gheneback"
+                android:fontFamily="@font/bungee"
+                android:text="Politics"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="74dp"
+                android:layout_height="41dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gheneback"
+                android:fontFamily="@font/bungee"
+                android:text="Food"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="74dp"
+                android:layout_height="41dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gheneback"
+                android:fontFamily="@font/bungee"
+                android:text="Self-Love"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="74dp"
+                android:layout_height="41dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gheneback"
+                android:fontFamily="@font/bungee"
+                android:text=" mystery"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+  <RelativeLayout
+      android:id="@+id/relativelayout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="190dp"
+        android:layout_height="220dp"
+        android:layout_margin="10dp"
+        android:id="@+id/bookimage_recycler"
+        android:scaleType="fitXY"
+        android:src="@drawable/book"/>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/bookimage_recycler"
+          android:fontFamily="@font/montserrat_alternates_bold"
+          android:id="@+id/bookname_recycler"
+          android:layout_marginStart="10dp"
+          android:text="A Terrible Country"
+          android:textColor="#000000"
+          android:textSize="16dp"
+          android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookname_recycler"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Sajal Kaushal"
+        android:id="@+id/bookauthor"
+        android:layout_marginStart="10dp"
+        android:textColor="#403F3F"
+        android:textSize="13dp"
+        android:layout_marginLeft="10dp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/like_border"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="170dp" />
+
+
+
+
+
+
+  </RelativeLayout>
+
+</RelativeLayout>

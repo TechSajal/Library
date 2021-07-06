@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/alfa_slab_one</item>
+        <item>@font/baloo_bhai</item>
+        <item>@font/bungee</item>
         <item>@font/days_one</item>
+        <item>@font/montserrat_alternates</item>
         <item>@font/montserrat_alternates_bold</item>
     </array>
 </resources>

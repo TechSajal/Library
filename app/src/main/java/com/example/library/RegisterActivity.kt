@@ -24,6 +24,7 @@ import com.google.firebase.ktx.Firebase
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private val UPDATEPROFILE:String ="profileCompleted"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -82,6 +83,9 @@ class RegisterActivity : AppCompatActivity() {
                             val sbView: View = snackbar.view
                             sbView.setBackgroundColor(resources.getColor(R.color.colorThemeOrange))
                             snackbar.show()
+                            val userHashMap = HashMap<String, Any>()
+                            userHashMap[UPDATEPROFILE] = 1
+                            FirestoreClass().updateUserProfile(this, userHashMap)
                             val intent = Intent(this,DashboardActivity::class.java)
                                 startActivity(intent)
                                  finish()

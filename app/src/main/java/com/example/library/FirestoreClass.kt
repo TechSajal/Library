@@ -21,4 +21,22 @@ class FirestoreClass {
         }
 
     }
+
+    fun registerproduct(activity: BooksAddActivity, userInfo: Book){
+        mfirestore.collection("Products").document().set(userInfo, SetOptions.merge())
+    }
+
+    fun getdashboarditemlist(fragment: DashboardActivity){
+        mfirestore.collection("Products")
+            .get()
+            .addOnSuccessListener { document ->
+                val BookLists:ArrayList<Book> =ArrayList()
+                for (i in document.documents){
+                    val book = i.toObject(Book::class.java)
+                    book!!.id = i.id
+                    BookLists.add(book)
+                }
+                fragment.successDashboardItemList(BookLists)
+            }
+    }
 }
