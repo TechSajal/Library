@@ -6,24 +6,50 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.EventListener
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.ktx.Firebase
 import java.util.*
 import kotlin.collections.ArrayList
 
 class DashboardActivity : AppCompatActivity() {
-//    private var recyclerView:RecyclerView? = null
+    private var code :String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
-     val add :ImageView =findViewById(R.id.add)
+        val logginin = FirebaseAuth.getInstance().currentUser != null
+        val add :ImageView =findViewById(R.id.add)
+        val logout:ImageView = findViewById(R.id.logout)
+        if (logginin){
+            logout.visibility = View.VISIBLE
+            logout.setOnClickListener {
+                FirebaseAuth.getInstance().signOut()
+                val i = Intent (this,LoginActivity::class.java)
+                 startActivity(i)
+                 finish()
+            }
+        }else{
+            logout.visibility = View.INVISIBLE
+        }
         add.setOnClickListener {
-            val i = Intent(this,BooksAddActivity::class.java)
-            startActivity(i)
-             finish()
+            if (logginin){
+                val i = Intent(this,BooksAddActivity::class.java)
+                startActivity(i)
+                finish()
+            }else{
+                Toast.makeText(this,"Please Sign In to add book",Toast.LENGTH_LONG).show()
+            }
         }
     }
 

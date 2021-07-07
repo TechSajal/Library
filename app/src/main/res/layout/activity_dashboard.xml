@@ -32,14 +32,22 @@
             android:textSize="24dp"
             tools:layout_editor_absoluteX="60dp"
             tools:layout_editor_absoluteY="13dp" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/logout"
+            android:visibility="invisible"
+            android:src="@drawable/logout"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="80dp" />
 
         <ImageView
             android:id="@+id/add"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginLeft="180dp"
-            android:src="@drawable/library_add" />
+            android:layout_marginStart="5dp"
+            android:src="@drawable/library_add"
+            android:layout_marginLeft="5dp" />
 
     </androidx.appcompat.widget.Toolbar>
 

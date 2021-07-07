@@ -8,12 +8,14 @@ import com.google.firebase.firestore.SetOptions
 
 class FirestoreClass {
     private  val mfirestore = FirebaseFirestore.getInstance()
-    val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
+
     fun registeruser(activity: RegisterActivity,userInfo: User){
+        val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
         mfirestore.collection("users").document(currentuserid).set(userInfo, SetOptions.merge())
     }
 
     fun updateUserProfile(activity: Activity, userHashMap: HashMap<String, Any>){
+        val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
         mfirestore.collection("users").document(currentuserid).update(userHashMap).addOnSuccessListener {
 
         }.addOnFailureListener { e ->
