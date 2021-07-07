@@ -4,6 +4,7 @@ data  class Book(
     val user_id:String = "",
     val user_name:String = "",
     val bookname:String = "",
+    // title = author
     val booktitle:String = "",
     val bookdescription: String = "",
     val bookimage:String = "",
